@@ -48,8 +48,14 @@
   padding: 10px;
   cursor: pointer;
   border-radius: 15px;
+  cursor: move !important;
+}
+
+.hanoi:active {
+  cursor: move !important;
 }
 
 .hanoi-active {
   border: 2px solid white;
+  opacity: 0.01;
 }
