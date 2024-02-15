@@ -2,7 +2,7 @@
 
 // DOM
 const towersDIVs = document.querySelectorAll(".tower");
-let hanoiansDIVs; // Variable to hold hanoians elements, initialized later
+const hanoiansDIVs = document.getElementsByClassName("hanoi"); // at first this is undefined
 
 //  Game
 const towers = [
