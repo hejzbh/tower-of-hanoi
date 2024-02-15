@@ -10,7 +10,7 @@
 <div>
   <h2>How to Play</h2>
   <p>
-    The game consists of three poles and a set of disks of different sizes. Initially, all the disks are stacked on one pole in size order, with the largest disk at the bottom and the smallest at the top. The objective is to move all the disks to another pole, adhering to the rule that a larger disk cannot be placed on top of a smaller one.
+    The game consists of three poles and a set of disks of different sizes. Initially, all the disks are stacked on one pole in size order, with the largest disk at the bottom and the smallest at the top. The objective is to move all the disks to another pole (last one), adhering to the rule that a larger disk cannot be placed on top of a smaller one.
   </p>
 </div>
 
