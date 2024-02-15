@@ -69,11 +69,7 @@ function onHanoiDragEnd() {
 
   if (newHanoiTower) {
     // 1) Check if the selected hanoi can be placed on the clicked tower
-    if (
-      newHanoiTower.hanoians[0] &&
-      selectedHanoi.value > newHanoiTower.hanoians[0]
-    )
-      return;
+    if (!isValidHanoiMove(newHanoiTower)) return;
     // 2) Move the hanoi to the new tower
     towers[curentDragOverTowerIdx].hanoians.unshift(selectedHanoi.value);
     // 3) Remove the hanoi from the previous tower
@@ -96,6 +92,18 @@ function onHanoiDragEnd() {
   checkWin();
 }
 
+//
+function isValidHanoiMove(newHanoiTower) {
+  if (!newHanoiTower.hanoians[0]) return true; // tower is empty
+
+  //                                                     selectedHanoi ->   _
+  // true = Selected hanoi is smaller than element at top of newHanoiTower ___
+  //
+  //                                                     selectedHanoi ->  ___
+  // false = Selected hanoi is bigger than element at top of newHanoiTower  _
+  return selectedHanoi.value < newHanoiTower.hanoians[0];
+}
+
 // this = e.target = <div class="tower">
 function onTowerDragOver(e, towerIdx) {
   // 1) Check if there is a selected hanoi and it's not on the same tower
@@ -103,11 +111,7 @@ function onTowerDragOver(e, towerIdx) {
   // 2) Get the tower object for the tower being dragged over
   const newHanoiTower = towers[towerIdx];
   // 3) Check if the selected hanoi can be placed on the clicked tower
-  if (
-    newHanoiTower.hanoians[0] &&
-    selectedHanoi.value > newHanoiTower.hanoians[0]
-  )
-    return;
+  if (!isValidHanoiMove(newHanoiTower)) return;
 
   // 4) Prevent the default behavior of the dragover event
   e.preventDefault();
