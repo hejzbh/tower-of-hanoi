@@ -121,7 +121,6 @@ function generateHanoians() {
 // Event listeners
 (() => {
   generateHanoians(); // Generate hanoians when the game starts
-  hanoiansDIVs = document.getElementsByClassName("hanoi"); // Initialize hanoiansDIVs after generating hanoians
 
   // Add event listeners to hanoians
   Array.from(hanoiansDIVs).forEach((hanoi) =>
